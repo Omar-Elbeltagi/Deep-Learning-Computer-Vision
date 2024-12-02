@@ -1,0 +1,197 @@
+I:\Python\python.exe "I:\CIS-2532\week 11\pythonProject\Computer Vision.py" 
+2024-12-01 23:14:56.368984: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-12-01 23:14:57.770388: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+x_train shape: (50000, 32, 32, 3)
+y_train shape: (50000, 1)
+[[[ 59  62  63]
+  [ 43  46  45]
+  [ 50  48  43]
+  ...
+  [158 132 108]
+  [152 125 102]
+  [148 124 103]]
+
+ [[ 16  20  20]
+  [  0   0   0]
+  [ 18   8   0]
+  ...
+  [123  88  55]
+  [119  83  50]
+  [122  87  57]]
+
+ [[ 25  24  21]
+  [ 16   7   0]
+  [ 49  27   8]
+  ...
+  [118  84  50]
+  [120  84  50]
+  [109  73  42]]
+
+ ...
+
+ [[208 170  96]
+  [201 153  34]
+  [198 161  26]
+  ...
+  [160 133  70]
+  [ 56  31   7]
+  [ 53  34  20]]
+
+ [[180 139  96]
+  [173 123  42]
+  [186 144  30]
+  ...
+  [184 148  94]
+  [ 97  62  34]
+  [ 83  53  34]]
+
+ [[177 144 116]
+  [168 129  94]
+  [179 142  87]
+  ...
+  [216 184 140]
+  [151 118  84]
+  [123  92  72]]]
+The label is: [6]
+
+=====================================
+
+The one hot label is: [0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
+
+=====================================
+
+[[[0.23137255 0.24313726 0.24705882]
+  [0.16862746 0.18039216 0.1764706 ]
+  [0.19607843 0.1882353  0.16862746]
+  ...
+  [0.61960787 0.5176471  0.42352942]
+  [0.59607846 0.49019608 0.4       ]
+  [0.5803922  0.4862745  0.40392157]]
+
+ [[0.0627451  0.07843138 0.07843138]
+  [0.         0.         0.        ]
+  [0.07058824 0.03137255 0.        ]
+  ...
+  [0.48235294 0.34509805 0.21568628]
+  [0.46666667 0.3254902  0.19607843]
+  [0.47843137 0.34117648 0.22352941]]
+
+ [[0.09803922 0.09411765 0.08235294]
+  [0.0627451  0.02745098 0.        ]
+  [0.19215687 0.10588235 0.03137255]
+  ...
+  [0.4627451  0.32941177 0.19607843]
+  [0.47058824 0.32941177 0.19607843]
+  [0.42745098 0.28627452 0.16470589]]
+
+ ...
+
+ [[0.8156863  0.6666667  0.3764706 ]
+  [0.7882353  0.6        0.13333334]
+  [0.7764706  0.6313726  0.10196079]
+  ...
+  [0.627451   0.52156866 0.27450982]
+  [0.21960784 0.12156863 0.02745098]
+  [0.20784314 0.13333334 0.07843138]]
+
+ [[0.7058824  0.54509807 0.3764706 ]
+  [0.6784314  0.48235294 0.16470589]
+  [0.7294118  0.5647059  0.11764706]
+  ...
+  [0.72156864 0.5803922  0.36862746]
+  [0.38039216 0.24313726 0.13333334]
+  [0.3254902  0.20784314 0.13333334]]
+
+ [[0.69411767 0.5647059  0.45490196]
+  [0.65882355 0.5058824  0.36862746]
+  [0.7019608  0.5568628  0.34117648]
+  ...
+  [0.84705883 0.72156864 0.54901963]
+  [0.5921569  0.4627451  0.32941177]
+  [0.48235294 0.36078432 0.28235295]]]
+
+=====================================
+
+I:\Python\Lib\site-packages\keras\src\layers\convolutional\base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2024-12-01 23:15:04.871814: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+┌─────────────────────────────────┬────────────────────────┬───────────────┐
+│ Layer (type)                    │ Output Shape           │       Param # │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv2d (Conv2D)                 │ (None, 32, 32, 32)     │           896 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv2d_1 (Conv2D)               │ (None, 32, 32, 32)     │         9,248 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ max_pooling2d (MaxPooling2D)    │ (None, 16, 16, 32)     │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 16, 16, 32)     │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv2d_2 (Conv2D)               │ (None, 16, 16, 64)     │        18,496 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ conv2d_3 (Conv2D)               │ (None, 16, 16, 64)     │        36,928 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ max_pooling2d_1 (MaxPooling2D)  │ (None, 8, 8, 64)       │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_1 (Dropout)             │ (None, 8, 8, 64)       │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ flatten (Flatten)               │ (None, 4096)           │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense (Dense)                   │ (None, 512)            │     2,097,664 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_2 (Dropout)             │ (None, 512)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_1 (Dense)                 │ (None, 10)             │         5,130 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 2,168,362 (8.27 MB)
+ Trainable params: 2,168,362 (8.27 MB)
+ Non-trainable params: 0 (0.00 B)
+None
+
+=====================================
+
+Epoch 1/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 33s 24ms/step - accuracy: 0.3396 - loss: 1.7835 - val_accuracy: 0.5767 - val_loss: 1.1690
+Epoch 2/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 30s 24ms/step - accuracy: 0.5790 - loss: 1.1780 - val_accuracy: 0.6715 - val_loss: 0.9329
+Epoch 3/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 32s 26ms/step - accuracy: 0.6580 - loss: 0.9776 - val_accuracy: 0.7029 - val_loss: 0.8647
+Epoch 4/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 30s 24ms/step - accuracy: 0.6942 - loss: 0.8726 - val_accuracy: 0.7242 - val_loss: 0.7908
+Epoch 5/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 31s 25ms/step - accuracy: 0.7126 - loss: 0.8052 - val_accuracy: 0.7380 - val_loss: 0.7539
+Epoch 6/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 31s 25ms/step - accuracy: 0.7419 - loss: 0.7410 - val_accuracy: 0.7454 - val_loss: 0.7353
+Epoch 7/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 30s 24ms/step - accuracy: 0.7561 - loss: 0.6864 - val_accuracy: 0.7352 - val_loss: 0.7685
+Epoch 8/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 30s 24ms/step - accuracy: 0.7690 - loss: 0.6502 - val_accuracy: 0.7521 - val_loss: 0.7128
+Epoch 9/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 29s 23ms/step - accuracy: 0.7828 - loss: 0.6151 - val_accuracy: 0.7585 - val_loss: 0.6870
+Epoch 10/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 29s 23ms/step - accuracy: 0.7952 - loss: 0.5859 - val_accuracy: 0.7677 - val_loss: 0.6731
+Epoch 11/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 29s 23ms/step - accuracy: 0.8015 - loss: 0.5613 - val_accuracy: 0.7458 - val_loss: 0.7637
+Epoch 12/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 30s 24ms/step - accuracy: 0.8117 - loss: 0.5368 - val_accuracy: 0.7647 - val_loss: 0.7053
+Epoch 13/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 29s 24ms/step - accuracy: 0.8144 - loss: 0.5212 - val_accuracy: 0.7688 - val_loss: 0.6694
+Epoch 14/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 30s 24ms/step - accuracy: 0.8242 - loss: 0.4940 - val_accuracy: 0.7717 - val_loss: 0.6805
+Epoch 15/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 29s 23ms/step - accuracy: 0.8354 - loss: 0.4676 - val_accuracy: 0.7680 - val_loss: 0.6912
+Epoch 16/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 29s 23ms/step - accuracy: 0.8386 - loss: 0.4617 - val_accuracy: 0.7754 - val_loss: 0.7008
+Epoch 17/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 28s 22ms/step - accuracy: 0.8431 - loss: 0.4433 - val_accuracy: 0.7710 - val_loss: 0.6840
+Epoch 18/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 28s 23ms/step - accuracy: 0.8442 - loss: 0.4366 - val_accuracy: 0.7729 - val_loss: 0.7077
+Epoch 19/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 28s 23ms/step - accuracy: 0.8509 - loss: 0.4249 - val_accuracy: 0.7750 - val_loss: 0.6935
+Epoch 20/20
+1250/1250 ━━━━━━━━━━━━━━━━━━━━ 28s 23ms/step - accuracy: 0.8539 - loss: 0.4116 - val_accuracy: 0.7749 - val_loss: 0.7159
+313/313 ━━━━━━━━━━━━━━━━━━━━ 2s 6ms/step - accuracy: 0.7696 - loss: 0.7252
+WARNING:absl:You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+
+Process finished with exit code 0
